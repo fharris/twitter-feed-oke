@@ -19,9 +19,10 @@ push-release:
     - internal/docker-push:
         username: $DOCKER_HUB_USERNAME
         password: $DOCKER_HUB_PASSWORD
+        image-name: twitter-feed
         tag: latest
-        repository: $DOCKER_HUB_REGISTRY/$DOCKER_HUB_REPO
-        registry: $DOCKER_HUB_REGISTRY
+        repository: fharris/twitter-feed
+        registry: https://hub.docker.com
         tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
         working-dir: /pipeline/source
         ports: 8080
