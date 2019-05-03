@@ -19,7 +19,6 @@ push-release:
     - internal/docker-push:
         username: $DOCKER_HUB_USERNAME
         password: $DOCKER_HUB_PASSWORD
-        image-name: twitter-feed
         repository: fharris/twitter-feed
         registry: https://hub.docker.com
         tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
