@@ -17,10 +17,11 @@ build:
 push-release:
   steps:
     - internal/docker-push:
-        username: $DOCKER_USERNAME
-        password: $OCI_AUTH_TOKEN
-        repository: $DOCKER_REGISTRY/$DOCKER_REPO
-        registry: https://$DOCKER_REGISTRY/v2
+        username: $DOCKER_HUB_USERNAME
+        password: $DOCKER_HUB_PASSWORD
+        tag: latest
+        repository: $DOCKER_HUB_REGISTRY/$DOCKER_HUB_REPO
+        registry: $DOCKER_HUB_REGISTRY
         tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
         working-dir: /pipeline/source
         ports: 8080
